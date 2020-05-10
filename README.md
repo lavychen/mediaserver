@@ -4,41 +4,45 @@ Pedro Sanders | [psanders@fonoster.com](mailto:psanders@fonoster.com)
 
 ## Description
 
-Media Server base on Asterisk PBX
+This repository contains a dockerized distribution of Asterisk PBX 15.7 for
+use in Project Fonos.
 
 ## Run Environment
 
-Run environment variables are used in the entry point script to render
-configuration templates. The values of this variables can be specified during
-docker run, or in kubernetes manifests in the env array.
+Run environment variables are used in the entry point script to render configuration templates. You can specify the values of these variables during `docker run`, `docker-compose up`, or in Kubernetes manifests in the env array.
 
-- MS_ARI_USERNAME
-- MS_ARI_SECRET
-- MS_ARI_APP
-- MS_SIPPROXY_HOST
-- MS_SIPPROXY_USERNAME
-- MS_SIPPROXY_SECRET
-- MS_SIP_BINDADDR
-- MS_EXTERN_ADDR
-- MS_LOCALNET
+| Variable | Description | Required |
+| --- | --- | --- |
+| MS_SIPPROXY_HOST | proxy's IP address  | Yes |
+| MS_SIPPROXY_USERNAME | username at sipproxy  | Yes |
+| MS_SIPPROXY_SECRET | secret at sipproxy  | Yes |
+| MS_SIP_BINDADDR | Where to listen for SIP traffic. Defaults to `6060`  | Yes |
+| MS_EXTERN_ADDR | IP address to advertise  | Yes |
+| MS_AGI_URL | agi endpoint  | Yes |
+| MS_LOCALNET | Local networks. Use in combination with MS_EXTERN_ADDR | No |
 
 ## Usage
 
-### Under docker (pre-built)
+### Running with docker (pre-built)
 
 **Pull the images**
 
-`docker pull fonoster/castk`
+`docker pull fonoster/routr`
 
 **To run:**
 
 ```bash
 docker run -it \
     -p 6060:6060 \
-    fonoster/castk
+    -e MS_EXTERN_ADDR=${you host address}
+    -e MS_AGI_URL=${agi endpoint url}
+    -e MS_SIPPROXY_HOST=${sip proxy address}
+    -e MS_SIPPROXY_USERNAME=${username at sip proxy}
+    -e MS_SIPPROXY_SECRET=${secret at sip proxy}
+    fonoster/fonos-media-server
 ```
 
-### Under docker-compose
+### Running with docker-compose
 
 **Pull the images**
 
@@ -46,10 +50,7 @@ docker run -it \
 
 **To run:**
 
-```bash
-export HOST_ADDR=${your host address}
-docker-compose up --abort-on-container-exit
-```
+`docker-compose up --abort-on-container-exit`
 
 **Destroying the container**
 
