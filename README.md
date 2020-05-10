@@ -7,7 +7,7 @@ Pedro Sanders | [psanders@fonoster.com](mailto:psanders@fonoster.com)
 ## Description
 
 This repository contains a dockerized distribution of Asterisk PBX 15.7 for
-use in Project Fonos.
+use in [Project Fonos](https://github.com/fonoster/fonos).
 
 ## Run Environment
 
