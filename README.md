@@ -1,3 +1,5 @@
+![publish to docker](https://github.com/fonoster/fonos-media-server/workflows/publish%20to%20docker/badge.svg)
+
 ## Maintainer
 
 Pedro Sanders | [psanders@fonoster.com](mailto:psanders@fonoster.com)
