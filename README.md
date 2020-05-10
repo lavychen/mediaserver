@@ -14,16 +14,16 @@ Run environment variables are used in the entry point script to render configura
 | Variable | Description | Required |
 | --- | --- | --- |
 | AGI_URL | agi endpoint  | Yes |
-| SIPPROXY_HOST | proxy's IP address  | Yes |
-| SIPPROXY_USERNAME | username at sipproxy  | Yes |
-| SIPPROXY_SECRET | secret at sipproxy  | Yes |
-| SIP_BINDADDR | Where to listen for SIP traffic. Defaults to `6060`  | Yes |
+| SIPPROXY_HOST | Proxy's IP address  | Yes |
+| SIPPROXY_USERNAME | Username at sipproxy  | Yes |
+| SIPPROXY_SECRET | Secret at sipproxy  | Yes |
+| SIP_BINDADDR | Where to listen for SIP traffic. Defaults to `6060`  | No |
 | EXTERN_ADDR | IP address to advertise  | Yes |
 | LOCALNET | Local networks. Use in combination with EXTERN_ADDR | No |
 | DTMF_MODE | DTMF mode. Defaults to `auto_info` | No |
 | ENABLE_TEST_ACCOUNT | Configures the account `1001@test` with password `1234`. Defaults to `false` | No |
 
-> The test extension to test AGI endpoint is `1002`. Using ENABLE_TEST_ACCOUNT is not recommended in production.
+> The extension to test the AGI endpoint is `1002`. Using ENABLE_TEST_ACCOUNT is not recommended in production.
 
 ## Usage
 
