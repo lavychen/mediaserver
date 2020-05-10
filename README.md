@@ -13,13 +13,17 @@ Run environment variables are used in the entry point script to render configura
 
 | Variable | Description | Required |
 | --- | --- | --- |
-| MS_SIPPROXY_HOST | proxy's IP address  | Yes |
-| MS_SIPPROXY_USERNAME | username at sipproxy  | Yes |
-| MS_SIPPROXY_SECRET | secret at sipproxy  | Yes |
-| MS_SIP_BINDADDR | Where to listen for SIP traffic. Defaults to `6060`  | Yes |
-| MS_EXTERN_ADDR | IP address to advertise  | Yes |
-| MS_AGI_URL | agi endpoint  | Yes |
-| MS_LOCALNET | Local networks. Use in combination with MS_EXTERN_ADDR | No |
+| AGI_URL | agi endpoint  | Yes |
+| SIPPROXY_HOST | proxy's IP address  | Yes |
+| SIPPROXY_USERNAME | username at sipproxy  | Yes |
+| SIPPROXY_SECRET | secret at sipproxy  | Yes |
+| SIP_BINDADDR | Where to listen for SIP traffic. Defaults to `6060`  | Yes |
+| EXTERN_ADDR | IP address to advertise  | Yes |
+| LOCALNET | Local networks. Use in combination with EXTERN_ADDR | No |
+| DTMF_MODE | DTMF mode. Defaults to `auto_info` | No |
+| ENABLE_TEST_ACCOUNT | Configures the account `1001@test` with password `1234`. Defaults to `false` | No |
+
+> The test extension to test AGI endpoint is `1002`. Using ENABLE_TEST_ACCOUNT is not recommended in production.
 
 ## Usage
 
@@ -34,11 +38,11 @@ Run environment variables are used in the entry point script to render configura
 ```bash
 docker run -it \
     -p 6060:6060 \
-    -e MS_EXTERN_ADDR=${you host address}
-    -e MS_AGI_URL=${agi endpoint url}
-    -e MS_SIPPROXY_HOST=${sip proxy address}
-    -e MS_SIPPROXY_USERNAME=${username at sip proxy}
-    -e MS_SIPPROXY_SECRET=${secret at sip proxy}
+    -e EXTERN_ADDR=${you host address}
+    -e AGI_URL=${agi endpoint url}
+    -e SIPPROXY_HOST=${sip proxy address}
+    -e SIPPROXY_USERNAME=${username at sip proxy}
+    -e SIPPROXY_SECRET=${secret at sip proxy}
     fonoster/fonos-media-server
 ```
 

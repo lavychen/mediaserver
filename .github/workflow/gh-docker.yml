@@ -1,4 +1,4 @@
-name: Publish to Docker registry
+name: Deploy to Docker Hub
 on:
   release:
     types: [published]
