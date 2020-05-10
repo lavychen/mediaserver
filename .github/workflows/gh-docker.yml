@@ -1,0 +1,30 @@
+name: publish to docker
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Get current date
+        id: get_date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - name: Publish (Timestamp)
+        env:
+          VERSION: 15.7.4-${{ steps.get_date.outputs.date }}
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: fonoster/routr-media-server
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          workdir: .
+          buildargs: VERSION
+          tag_names: true
+      - name: Publish (latest)
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: fonoster/routr-media-server
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          workdir: .
+          buildargs: VERSION
