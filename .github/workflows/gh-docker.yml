@@ -9,7 +9,7 @@ jobs:
       - name: Publish
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: fonoster/fonos-media-server
+          name: fonoster/fonos-mediaserver
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           workdir: .
