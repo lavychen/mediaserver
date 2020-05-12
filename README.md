@@ -1,4 +1,4 @@
-# Fonos {Image Name}
+# Fonos Media Server
 
 > Docker image with a headless Asterisk PBX for Project Fonos
 
