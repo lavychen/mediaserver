@@ -60,6 +60,8 @@ Environment variables are used in the entry point script to render configuration
 - `DTMF_MODE` - DTMF mode. Defaults to `auto_info`
 - `ENABLE_TEST_ACCOUNT` -  Configures the account `1001@test` with password `1234`. Defaults to `false`
 
+> The extension to test the AGI endpoint is 1002. Using ENABLE_TEST_ACCOUNT is not recommended in production.
+
 ## Exposed ports
 
 - `6060` - Default SIP port
