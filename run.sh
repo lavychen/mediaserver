@@ -10,6 +10,7 @@ To run this image you must provide the following environment variables:
 END
 )
 
+[ -z "$EXTERN_PORT" ]         && { export EXTERN_PORT='0'; }
 [ -z "$ARI_USERNAME" ]        && { export ARI_USERNAME='admin'; }
 [ -z "$ARI_SECRET" ]          && { export ARI_SECRET='changeit'; }
 [ -z "$HTTP_BINDADDR" ]       && { export HTTP_BINDADDR='0.0.0.0'; }
@@ -33,6 +34,7 @@ sed -i.bak "s|AGI_URL_PLACEHOLDER|${AGI_URL}|g" /etc/asterisk/extensions.conf
 sed -i.bak "s|SIP_BINDADDR_PLACEHOLDER|${SIP_BINDADDR}|g" /etc/asterisk/pjsip.conf
 sed -i.bak "s|HTTP_BINDADDR_PLACEHOLDER|${HTTP_BINDADDR}|g" /etc/asterisk/http.conf
 sed -i.bak "s|EXTERN_ADDR_PLACEHOLDER|${EXTERN_ADDR}|g" /etc/asterisk/pjsip.conf
+sed -i.bak "s|EXTERN_PORT_PLACEHOLDER|${EXTERN_PORT}|g" /etc/asterisk/pjsip.conf
 sed -i.bak "s|LOCALNET_PLACEHOLDER|${LOCALNET}|g" /etc/asterisk/pjsip.conf
 sed -i.bak "s|LOCALNET_PLACEHOLDER|${LOCALNET}|g" /etc/asterisk/pjsip_wizard.conf
 sed -i.bak "s|SIPPROXY_HOST_PLACEHOLDER|${SIPPROXY_HOST}|g" /etc/asterisk/pjsip_wizard.conf
