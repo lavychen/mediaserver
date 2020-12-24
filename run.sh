@@ -35,8 +35,6 @@ sed -i.bak "s|SIP_BINDADDR_PLACEHOLDER|${SIP_BINDADDR}|g" /etc/asterisk/pjsip.co
 sed -i.bak "s|HTTP_BINDADDR_PLACEHOLDER|${HTTP_BINDADDR}|g" /etc/asterisk/http.conf
 sed -i.bak "s|EXTERN_ADDR_PLACEHOLDER|${EXTERN_ADDR}|g" /etc/asterisk/pjsip.conf
 sed -i.bak "s|EXTERN_PORT_PLACEHOLDER|${EXTERN_PORT}|g" /etc/asterisk/pjsip.conf
-sed -i.bak "s|LOCALNET_PLACEHOLDER|${LOCALNET}|g" /etc/asterisk/pjsip.conf
-sed -i.bak "s|LOCALNET_PLACEHOLDER|${LOCALNET}|g" /etc/asterisk/pjsip_wizard.conf
 sed -i.bak "s|SIPPROXY_HOST_PLACEHOLDER|${SIPPROXY_HOST}|g" /etc/asterisk/pjsip_wizard.conf
 sed -i.bak "s|SIPPROXY_USERNAME_PLACEHOLDER|${SIPPROXY_USERNAME}|g" /etc/asterisk/pjsip_wizard.conf
 sed -i.bak "s|SIPPROXY_SECRET_PLACEHOLDER|${SIPPROXY_SECRET}|g" /etc/asterisk/pjsip_wizard.conf
@@ -44,10 +42,12 @@ sed -i.bak "s|DTMF_MODE_PLACEHOLDER|${DTMF_MODE}|g" /etc/asterisk/pjsip_wizard.c
 
 if [[ "$ENABLE_TEST_ACCOUNT" = "true" ]]
 then
-  echo "Shit is true"
+  sed -i.bak "s|LOCALNET_PLACEHOLDER|''|g" /etc/asterisk/pjsip.conf
+  sed -i.bak "s|LOCALNET_PLACEHOLDER|''|g" /etc/asterisk/pjsip_wizard.conf
   sed -i.bak "s|TEST_ACCOUNT_CONTACTS_PLACEHOLDER|1|g" /etc/asterisk/pjsip_wizard.conf
 else
-  echo "Shit is not true"
+  sed -i.bak "s|LOCALNET_PLACEHOLDER|${LOCALNET}|g" /etc/asterisk/pjsip.conf
+  sed -i.bak "s|LOCALNET_PLACEHOLDER|${LOCALNET}|g" /etc/asterisk/pjsip_wizard.conf
   sed -i.bak "s|TEST_ACCOUNT_CONTACTS_PLACEHOLDER|0|g" /etc/asterisk/pjsip_wizard.conf
 fi
 
