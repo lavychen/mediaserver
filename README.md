@@ -1,6 +1,6 @@
-# Fonos Media Server
+# Media Server
 
-> Docker image with a headless Asterisk PBX for Project Fonos
+> Docker image with a headless Asterisk PBX
 
 ![publish to docker](https://github.com/fonoster/fonos-mediaserver/workflows/publish%20to%20docker%20hub/badge.svg)
 
