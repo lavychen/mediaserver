@@ -2,7 +2,7 @@
 
 > Docker image with a headless Asterisk PBX
 
-![publish to docker](https://github.com/fonoster/fonos-mediaserver/workflows/publish%20to%20docker%20hub/badge.svg)
+![publish to docker](https://github.com/fonoster/mediaserver/workflows/publish%20to%20docker%20hub/badge.svg)
 
 This repository contains a dockerized distribution of Asterisk PBX 15.7 for use in [Project Fonos](https://github.com/fonoster/fonos). For more documentation on how Fonos images are constructed and how to work with them, please see the [documentation](https://github.com/fonoster/fonos).
 
@@ -74,7 +74,7 @@ Please read [CONTRIBUTING.md](https://github.com/fonoster/fonos/blob/master/CONT
 
 - [Pedro Sanders](https://github.com/psanders)
 
-See also the list of contributors who [participated](https://github.com/fonoster/routr/contributors) in this project.
+See also the list of contributors who [participated](https://github.com/fonoster/mediaserver/contributors) in this project.
 
 ## License
 
