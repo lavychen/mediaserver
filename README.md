@@ -17,14 +17,14 @@ You can see all images available to pull from Docker Hub via the [Tags](https://
 You can clone this repository and manually build it.
 
 ```
-cd fonoster/fonos-mediaserver\:%%VERSION%%
-docker build -t fonoster/fonos-mediaserver:%%VERSION%% .
+cd fonoster/mediaserver\:%%VERSION%%
+docker build -t fonoster/mediaserver:%%VERSION%% .
 ```
 
 Otherwise you can pull this image from docker index.
 
 ```
-docker pull fonoster/fonos-mediaserver:%%VERSION%%
+docker pull fonoster/mediaserver:%%VERSION%%
 ```
 
 ## Usage Example
@@ -39,7 +39,7 @@ docker run -it \
     -e SIPPROXY_HOST=${sip proxy address}
     -e SIPPROXY_USERNAME=${username at sip proxy}
     -e SIPPROXY_SECRET=${secret at sip proxy}
-    fonoster/fonos-mediaserver
+    fonoster/mediaserver
 ```
 
 ## Image Specs
