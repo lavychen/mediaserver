@@ -18,13 +18,13 @@ You can clone this repository and manually build it.
 
 ```
 cd fonoster/mediaserver\:%%VERSION%%
-docker build -t fonoster/mediaserver:%%VERSION%% .
+docker build -t fonoster/fonos-mediaserver:%%VERSION%% .
 ```
 
 Otherwise you can pull this image from docker index.
 
 ```
-docker pull fonoster/mediaserver:%%VERSION%%
+docker pull fonoster/fonos-mediaserver:%%VERSION%%
 ```
 
 ## Usage Example
@@ -34,12 +34,13 @@ The following is a basic example of using this image.
 ```
 docker run -it \
     -p 6060:6060 \
-    -e EXTERN_ADDR=${you host address}
-    -e AGI_URL=${agi endpoint url}
-    -e SIPPROXY_HOST=${sip proxy address}
-    -e SIPPROXY_USERNAME=${username at sip proxy}
-    -e SIPPROXY_SECRET=${secret at sip proxy}
-    fonoster/mediaserver
+    -p 8088:8088 \
+    -e EXTERN_ADDR=${you host address} \
+    -e SIPPROXY_HOST=${sip proxy address} \
+    -e SIPPROXY_USERNAME=${username at sip proxy} \
+    -e SIPPROXY_SECRET=${secret at sip proxy} \
+    -e ENABLE_TEST_ACCOUNT=true \
+    fonoster/fonos-mediaserver
 ```
 
 ## Image Specs
@@ -50,7 +51,8 @@ Comming soon...
 
 Environment variables are used in the entry point script to render configuration templates. You can specify the values of these variables during `docker run`, `docker-compose up`, or in Kubernetes manifests in the `env` array.
 
-- `AGI_URL` - AGI service url. **Required**
+- `ARI_USERNAME` - Username for ARI API. Defaults to `admin`
+- `ARI_SECRET` - Password for ARI API. Defaults to `changeit`
 - `SIPPROXY_HOST` - The SIP Proxy's IP address. **Required**
 - `SIPPROXY_USERNAME` - Username at SIP Proxy . **Required**
 - `SIPPROXY_SECRET` - Secret at SIP Proxy . **Required**
@@ -60,7 +62,7 @@ Environment variables are used in the entry point script to render configuration
 - `DTMF_MODE` - DTMF mode. Defaults to `auto_info`
 - `ENABLE_TEST_ACCOUNT` -  Configures the account `1001@test` with password `1234`. Defaults to `false`
 
-> The extension to test the AGI endpoint is 1002. Using ENABLE_TEST_ACCOUNT is not recommended in production.
+> The test extension is `17853178070`. Using ENABLE_TEST_ACCOUNT is not recommended in production.
 
 ## Exposed ports
 
