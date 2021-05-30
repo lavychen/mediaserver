@@ -9,4 +9,4 @@ RUN apk add --no-cache --update curl tini asterisk=16.16.1-r0 asterisk-sounds-en
 ENTRYPOINT ["tini", "-v", "--"]
 CMD ["/run.sh"]
 
-# TODO: Use healthcheck http://localhost:8088/ari/asterisk/info
+HEALTHCHECK CMD curl -u "${ARI_USERNAME}:${ARI_SECRET}" --fail  http://localhost:8088/ari/asterisk/ping || exit 1 
