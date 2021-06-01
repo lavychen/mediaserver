@@ -13,4 +13,4 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
           workdir: .
-          tags: "latest,15.7.4,15.7,15"
+          tags: "latest,16.6.1,16.6,16"
