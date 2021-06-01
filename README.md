@@ -51,6 +51,7 @@ Comming soon...
 
 Environment variables are used in the entry point script to render configuration templates. You can specify the values of these variables during `docker run`, `docker-compose up`, or in Kubernetes manifests in the `env` array.
 
+- `ARI_EXTERNAL_URL` - Front URL for ARI API. Defaults to `http://localhost:8088`
 - `ARI_USERNAME` - Username for ARI API. Defaults to `admin`
 - `ARI_SECRET` - Password for ARI API. Defaults to `changeit`
 - `SIPPROXY_HOST` - The SIP Proxy's IP address. **Required**
@@ -67,6 +68,10 @@ Environment variables are used in the entry point script to render configuration
 ## Exposed ports
 
 - `6060` - Default SIP port
+
+## Volumes
+
+- `root/.fonos/config` - Volume with config file. The the role should at least have a role type `SERVICE`.
 
 ## Contributing
 

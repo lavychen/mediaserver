@@ -9,6 +9,7 @@ To run this image you must provide the following environment variables:
 END
 )
 
+[ -z "$ARI_EXTERNAL_URL" ]    && { export ARI_EXTERNAL_URL='http://localhost:8088'; }
 [ -z "$EXTERN_PORT" ]         && { export EXTERN_PORT='0'; }
 [ -z "$ARI_USERNAME" ]        && { export ARI_USERNAME='admin'; }
 [ -z "$ARI_SECRET" ]          && { export ARI_SECRET='changeit'; }
@@ -52,6 +53,10 @@ fi
 
 rm /etc/asterisk/*.bak
 
-asterisk -vvvdddf
+asterisk -v
+
+# Starts the dispatcher
+export ARI_INTERNAL_URL='http://localhost:8088'; 
+run
 
 while sleep 3600; do :; done
