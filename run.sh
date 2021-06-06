@@ -44,7 +44,7 @@ if [[ "$ENABLE_TEST_ACCOUNT" = "true" ]]
 then
   sed -i.bak "s|LOCALNET_PLACEHOLDER||g" /etc/asterisk/pjsip.conf
   sed -i.bak "s|LOCALNET_PLACEHOLDER||g" /etc/asterisk/pjsip_wizard.conf
-  sed -i.bak "s|TEST_ACCOUNT_CONTACTS_PLACEHOLDER|1|g" /etc/asterisk/pjsip_wizard.conf
+  sed -i.bak "s|TEST_ACCOUNT_CONTACTS_PLACEHOLDER|2|g" /etc/asterisk/pjsip_wizard.conf
 else
   sed -i.bak "s|LOCALNET_PLACEHOLDER|${LOCALNET}|g" /etc/asterisk/pjsip.conf
   sed -i.bak "s|LOCALNET_PLACEHOLDER|${LOCALNET}|g" /etc/asterisk/pjsip_wizard.conf
