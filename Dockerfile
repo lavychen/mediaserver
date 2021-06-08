@@ -1,4 +1,4 @@
-FROM alpine:3.13
+FROM node:14-alpine3.12
 LABEL maintainer="Pedro Sanders <psanders@fonoster.com>"
 
 # TODO: Update to use Asterisk 16 instead of 18.
@@ -12,8 +12,6 @@ RUN apk add --no-cache --update \
  tini \
  asterisk \
  asterisk-sounds-en \
- npm \
- nodejs \
  python3 \ 
  && npm -g config set user root \  
  && npm -g install @fonos/dispatcher \
