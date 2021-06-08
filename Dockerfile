@@ -8,6 +8,7 @@ RUN apk add --no-cache --update \
  curl \
  tini \
  asterisk \
+ asterisk-curl \
  asterisk-sounds-en \
  python3 \ 
  && npm -g config set user root \  
