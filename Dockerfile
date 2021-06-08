@@ -1,9 +1,6 @@
 FROM node:14-alpine3.12
 LABEL maintainer="Pedro Sanders <psanders@fonoster.com>"
 
-# TODO: Update to use Asterisk 16 instead of 18.
-# Asterisk 18 breaks the externalMedia functionality
-
 COPY config /etc/asterisk/
 COPY run.sh /
 
