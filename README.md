@@ -4,7 +4,7 @@
 
 ![publish to docker](https://github.com/fonoster/mediaserver/workflows/publish%20to%20docker%20hub/badge.svg)
 
-This repository contains a dockerized distribution of Asterisk PBX 15.7 for use in [Project Fonos](https://github.com/fonoster/fonos). For more documentation on how Fonos images are constructed and how to work with them, please see the [documentation](https://github.com/fonoster/fonos).
+This repository contains a dockerized distribution of Asterisk PBX 16 for use in [Project Fonos](https://github.com/fonoster/fonos). For more documentation on how Fonos images are constructed and how to work with them, please see the [documentation](https://github.com/fonoster/fonos).
 
 ## Available Versions
 
