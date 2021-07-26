@@ -12,7 +12,7 @@ RUN apk add --no-cache --update \
  asterisk-sounds-en \
  python3 \ 
  && npm -g config set user root \  
- && npm -g install https://gitpkg.now.sh/Fonoster/fonos/mods/dispatcher?dev \
+ && npm -g install https://gitpkg.now.sh/wardner/fonos/mods/dispatcher?temp \
  && chmod +x /run.sh
 
 ENTRYPOINT ["tini", "-v", "--"]
