@@ -10,6 +10,7 @@ RUN apk add --no-cache --update \
  asterisk \
  asterisk-curl \
  asterisk-sounds-en \
+  asterisk-sounds-moh \
  python3 \ 
  && npm -g config set user root \  
  && npm -g install @fonos/dispatcher \
