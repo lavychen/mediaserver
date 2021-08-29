@@ -8,6 +8,7 @@ RUN apk add --no-cache --update \
  curl \
  tini \
  asterisk \
+ asterisk-speex \
  asterisk-curl \
  asterisk-sounds-en \
   asterisk-sounds-moh \
