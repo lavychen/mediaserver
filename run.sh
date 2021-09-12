@@ -17,7 +17,7 @@ END
 [ -z "$SIP_BINDADDR" ]        && { export SIP_BINDADDR='0.0.0.0:6060'; }
 [ -z "$SIPPROXY_PORT" ]       && { export SIPPROXY_PORT='5060'; }
 [ -z "$CODECS" ]              && { export CODECS='ulaw,alaw,gsm,g722'; }
-[ -z "$DTMF_MODE" ]           && { export DTMF_MODE='auto_info'; }
+[ -z "$DTMF_MODE" ]           && { export DTMF_MODE='inband'; }
 [ -z "$ENABLE_TEST_ACCOUNT" ] && { export ENABLE_TEST_ACCOUNT='false'; }
 [ -z "$LOCALNET" ]            && { export LOCALNET=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}'); }
 
