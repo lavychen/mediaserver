@@ -15,7 +15,8 @@ END
 [ -z "$ARI_SECRET" ]          && { export ARI_SECRET='changeit'; }
 [ -z "$HTTP_BINDADDR" ]       && { export HTTP_BINDADDR='0.0.0.0'; }
 [ -z "$SIP_BINDADDR" ]        && { export SIP_BINDADDR='0.0.0.0:6060'; }
-[ -z "$SIPPROXY_PORT" ]        && { export SIPPROXY_PORT='5060'; }
+[ -z "$SIPPROXY_PORT" ]       && { export SIPPROXY_PORT='5060'; }
+[ -z "$CODECS" ]              && { export CODECS='ulaw,alaw,gsm,g722'; }
 [ -z "$DTMF_MODE" ]           && { export DTMF_MODE='auto_info'; }
 [ -z "$ENABLE_TEST_ACCOUNT" ] && { export ENABLE_TEST_ACCOUNT='false'; }
 [ -z "$LOCALNET" ]            && { export LOCALNET=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}'); }
@@ -39,6 +40,7 @@ sed -i.bak "s|SIPPROXY_PORT_PLACEHOLDER|${SIPPROXY_PORT}|g" /etc/asterisk/pjsip_
 sed -i.bak "s|SIPPROXY_USERNAME_PLACEHOLDER|${SIPPROXY_USERNAME}|g" /etc/asterisk/pjsip_wizard.conf
 sed -i.bak "s|SIPPROXY_SECRET_PLACEHOLDER|${SIPPROXY_SECRET}|g" /etc/asterisk/pjsip_wizard.conf
 sed -i.bak "s|DTMF_MODE_PLACEHOLDER|${DTMF_MODE}|g" /etc/asterisk/pjsip_wizard.conf
+sed -i.bak "s|CODECS_PLACEHOLDER|${CODECS}|g" /etc/asterisk/pjsip_wizard.conf
 sed -i.bak "s|RTP_PORT_START_PLACEHOLDER|${RTP_PORT_START}|g" /etc/asterisk/rtp.conf
 sed -i.bak "s|RTP_PORT_END_PLACEHOLDER|${RTP_PORT_END}|g" /etc/asterisk/rtp.conf
 
