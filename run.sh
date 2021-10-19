@@ -6,6 +6,8 @@ To run this image you must provide the following environment variables:
     SIPPROXY_HOST
     SIPPROXY_USERNAME
     SIPPROXY_SECRET
+    SIPPROXY_API_USERNAME
+    SIPPROXY_API_SECRET    
 END
 )
 
@@ -15,6 +17,7 @@ END
 [ -z "$ARI_SECRET" ]          && { export ARI_SECRET='changeit'; }
 [ -z "$HTTP_BINDADDR" ]       && { export HTTP_BINDADDR='0.0.0.0'; }
 [ -z "$SIP_BINDADDR" ]        && { export SIP_BINDADDR='0.0.0.0:6060'; }
+[ -z "$SIPPROXY_API_HOST" ]   && { export SIPPROXY_API_HOST='localhost'; }
 [ -z "$SIPPROXY_PORT" ]       && { export SIPPROXY_PORT='5060'; }
 [ -z "$CODECS" ]              && { export CODECS='ulaw,alaw,gsm,g722'; }
 [ -z "$DTMF_MODE" ]           && { export DTMF_MODE='inband'; }
@@ -23,6 +26,8 @@ END
 
 [ -z "$EXTERN_ADDR" ]       ||
 [ -z "$SIPPROXY_HOST" ]     ||
+[ -z "$SIPPROXY_API_USERNAME" ] ||
+[ -z "$SIPPROXY_API_SECRET" ]
 [ -z "$SIPPROXY_USERNAME" ] ||
 [ -z "$SIPPROXY_SECRET" ]   && {
     echo "$USAGE"

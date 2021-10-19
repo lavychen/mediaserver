@@ -56,8 +56,11 @@ Environment variables are used in the entry point script to render configuration
 - `ARI_SECRET` - Password for ARI API. Defaults to `changeit`
 - `SIPPROXY_HOST` - The SIP Proxy's IP address. **Required**
 - `SIPPROXY_PORT` - The SIP Proxy's port. Defaults `5060`
-- `SIPPROXY_USERNAME` - Username at SIP Proxy . **Required**
-- `SIPPROXY_SECRET` - Secret at SIP Proxy . **Required**
+- `SIPPROXY_USERNAME` - Username at SIP Proxy. **Required**
+- `SIPPROXY_SECRET` - Secret at SIP Proxy. **Required**
+- `SIPPROXY_API_HOST` - Host address for the API might be different than the Proxy's regular host address. Defaults to `localhost`
+- `SIPPROXY_API_USERNAME` - API Username at SIP Proxy. **Required**
+- `SIPPROXY_API_SECRET` - API Secret at SIP Proxy. **Required**
 - `EXTERN_ADDR` - IP address to advertise. **Required**
 - `LOCALNET` - Local networks. Use in combination with EXTERN_ADDR
 - `SIP_BINDADDR` - Where to listen for SIP traffic. Defaults to `6060`
