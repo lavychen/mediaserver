@@ -18,13 +18,13 @@ You can clone this repository and manually build it.
 
 ```
 cd fonoster/mediaserver\:%%VERSION%%
-docker build -t fonoster/fonos-mediaserver:%%VERSION%% .
+docker build -t fonoster/mediaserver:%%VERSION%% .
 ```
 
 Otherwise you can pull this image from docker index.
 
 ```
-docker pull fonoster/fonos-mediaserver:%%VERSION%%
+docker pull fonoster/mediaserver:%%VERSION%%
 ```
 
 ## Usage Example
@@ -40,12 +40,8 @@ docker run -it \
     -e SIPPROXY_USERNAME=${username at sip proxy} \
     -e SIPPROXY_SECRET=${secret at sip proxy} \
     -e ENABLE_TEST_ACCOUNT=true \
-    fonoster/fonos-mediaserver
+    fonoster/mediaserver
 ```
-
-## Image Specs
-
-Comming soon...
 
 ## Environment Variables
 
