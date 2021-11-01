@@ -4,11 +4,11 @@
 
 ![publish to docker](https://github.com/fonoster/mediaserver/workflows/publish%20to%20docker%20hub/badge.svg)
 
-This repository contains a dockerized distribution of Asterisk PBX 16 for use in [Project Fonos](https://github.com/fonoster/fonos). For more documentation on how Fonos images are constructed and how to work with them, please see the [documentation](https://github.com/fonoster/fonos).
+This repository contains a dockerized distribution of Asterisk PBX 16 for use in [Fonoster](https://github.com/fonoster/fonoster). For more documentation on how Fonoster images are constructed and how to work with them, please see the [documentation](https://github.com/fonoster/fonoster).
 
 ## Available Versions
 
-You can see all images available to pull from Docker Hub via the [Tags](https://hub.docker.com/repository/docker/fonoster/fonos-mediaserver/tags?page=1) page. Docker tag names that begin with a "change type" word such as task, bug, or feature are available for testing and may be removed at any time.
+You can see all images available to pull from Docker Hub via the [Tags](https://hub.docker.com/repository/docker/fonoster/mediaserver/tags?page=1) page. Docker tag names that begin with a "change type" word such as task, bug, or feature are available for testing and may be removed at any time.
 
 > The version is the same of the Asterisk this is image is based on
 
@@ -71,11 +71,11 @@ Environment variables are used in the entry point script to render configuration
 
 ## Volumes
 
-- `root/.fonos/config` - Volume with config file. The the role should at least have a role type `SERVICE`.
+- `root/.fonoster/config` - Volume with config file. The the role should at least have a role type `SERVICE`.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/fonoster/fonos/blob/main/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/fonoster/fonoster/blob/main/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
@@ -85,4 +85,4 @@ See also the list of contributors who [participated](https://github.com/fonoster
 
 ## License
 
-Copyright (C) 2021 by Fonoster Inc. MIT License (see [LICENSE](https://github.com/fonoster/fonos/blob/main/LICENSE) for details).
+Copyright (C) 2021 by Fonoster Inc. MIT License (see [LICENSE](https://github.com/fonoster/fonoster/blob/main/LICENSE) for details).
