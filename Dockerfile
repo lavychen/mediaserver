@@ -5,7 +5,6 @@ COPY config /etc/asterisk/
 COPY run.sh /
 
 RUN apk add --no-cache --update \
- curl \
  tini \
  asterisk \
  asterisk-speex \
@@ -20,4 +19,4 @@ RUN apk add --no-cache --update \
 ENTRYPOINT ["tini", "-v", "--"]
 CMD ["/run.sh"]
 
-HEALTHCHECK CMD curl -u "${ARI_USERNAME}:${ARI_SECRET}" --fail  http://localhost:8088/ari/asterisk/ping || exit 1
+HEALTHCHECK CMD asterisk -rx "pjsip show registrations" | grep -q "Registered" || exit 1
